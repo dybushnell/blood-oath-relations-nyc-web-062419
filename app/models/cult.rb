@@ -23,7 +23,6 @@ def Cult
       return nil
     else
       @followers << followers
-      follower.join_cult(self)
     end
   end
 

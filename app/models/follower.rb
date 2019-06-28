@@ -22,7 +22,7 @@ def Follower
       return nil
     else
       @cults << cult
-      cult.recruit_follower(self)
+      BloodOath.new(cult, self)
     end
   end
 

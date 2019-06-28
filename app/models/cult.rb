@@ -19,7 +19,12 @@ def Cult
   end
 
   def recruit_follower(follower)
-    @followers << followers
+    if @followers.include? follower
+      return nil
+    else
+      @followers << followers
+      follower.join_cult(self)
+    end
   end
 
   def cult_population

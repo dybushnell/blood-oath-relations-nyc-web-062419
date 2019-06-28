@@ -18,8 +18,12 @@ def Follower
   end
 
   def join_cult(cult)
-    @cults << cult
-    Cult.recruit_follower(self)
+    if @cults.include? cult
+      return nil
+    else
+      @cults << cult
+      cult.recruit_follower(self)
+    end
   end
 
   def self.of_a_certain_age(age_arg)
